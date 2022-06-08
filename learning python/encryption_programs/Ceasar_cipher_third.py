@@ -6,15 +6,26 @@
 #For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.
 
 #This time I will use unicode codes.
+from multiprocessing.connection import wait
+import os
+from time import sleep
 
-def start(option_choosed):
+def start_2(option_choosed):
     if option_choosed == "1":
         print("Exited")
+        sleep(2)
+        clear()
     elif option_choosed == "2":
+        clear()
         print(encrypt(input("Enter your message: "), input("Enter amount of shifts: "), input("Enter - for right shift or + for left shift: ")))
+        print(input(""))
+        clear()
+        return start_1()
     else:
         print("You must choose between 1 or 2")
-        return start(input)
+        print(input(""))
+        clear()
+        return start_1()
 
 
 def encrypt(message, shift, direction):
@@ -29,9 +40,14 @@ def encrypt(message, shift, direction):
         result += encrypted_char
     return result
 
-options = ["Exit", "Encryption"]
-for i in range(len(options)):
-    print(str(i+1) + ":", options[i])
+def start_1():
+    options = ["Exit", "Encryption"]
+    for i in range(len(options)):
+        print(str(i+1) + ":", options[i])
+    start_2(input("Enter a number: "))
 
-start(input("Enter a number: "))
+clear = lambda: os.system('cls')
+
+start_1()
+
 
