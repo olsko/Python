@@ -6,7 +6,6 @@
 #For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.
 
 #This time I will use unicode codes.
-from multiprocessing.connection import wait
 import os
 from time import sleep
 
