@@ -9,15 +9,14 @@ def tap_code(message):
         row = int((ord(char) - ord('a')) / 5) + 1
         col = ((ord(char) - ord('a')) % 5) + 1
         
-        if char == 'k':
-            row = row - 1
-            col = 5 - col + 1
+        if char == "k":
+            row = 1
+            col = 3
         
-        elif ord(char) >= ord('j'):
-            if col == 1 :
-                col = 6
-                row = row - 1          
-                col = col - 1
+        if ord(char) >= ord('j') and col == 1:
+            col = 6
+            row = row - 1          
+            col = col - 1
         
         if char != " ":
             dot_char = row * "." + " " + col * "."
@@ -25,7 +24,8 @@ def tap_code(message):
             dot_char = " "
         
         result += dot_char + " | "
-    return result
+        
+        return result
 
 def start_2(option_choosed):
     if option_choosed == "1":
@@ -34,7 +34,7 @@ def start_2(option_choosed):
         clear()
     elif option_choosed == "2":
         clear()
-        print(tap_code(input("Enter your message: ")))
+        print(tap_code(input("Enter your message(all lowercase): ")))
         print(input(""))
         clear()
         return start_1()

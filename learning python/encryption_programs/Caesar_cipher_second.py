@@ -12,7 +12,7 @@ import collections
 def encrypt(message, shift, direction):
     result = ""
     shift_direction = int(direction + shift)
-    #declaring the alphabe and digits
+    #declaring the alphabet and digits
     alphabet = string.ascii_letters
     alphabet_low = string.ascii_lowercase
     alphabet_up = string.ascii_uppercase

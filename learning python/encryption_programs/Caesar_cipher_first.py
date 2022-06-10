@@ -64,10 +64,10 @@ alphabet = {
 }
 
 message = input("Enter a message to cypher: ")
-cypher = ""
+result = ""
 
 for letter in range(len(message)):
-    cypher = cypher + alphabet[message[letter]]
+    result += alphabet[message[letter]]
 
 
-print(cypher)
+print(result)
