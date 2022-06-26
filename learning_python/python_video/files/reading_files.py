@@ -4,7 +4,7 @@
 # w - write
 # a - append(only adding new information to the end of the file)
 
-employee_list = open("files\example_text_file.txt", "r")
+employee_list = open("example_text_file.txt", "r")
 
 print(employee_list.readable())
 
