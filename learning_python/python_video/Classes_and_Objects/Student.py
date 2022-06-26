@@ -1,6 +1,3 @@
-from re import A
-
-
 class Student:
     
     def __init__(self, name, major, gpa, age, is_on_probation):
